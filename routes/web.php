@@ -1,12 +1,18 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SplashController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Splash / Landing
+Route::get('/', [SplashController::class, 'index'])->name('splash');
 
+// Public pages (placeholder — akan diisi di feature/public-pages)
+Route::get('/beranda', function () {
+    return redirect('/'); // temp
+})->name('home');
+
+// Dashboard (admin area — akan diisi di feature/admin-panel)
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
