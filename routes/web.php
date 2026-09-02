@@ -1,26 +1,26 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SplashController;
 use Illuminate\Support\Facades\Route;
 
-// Splash / Landing
+/*
+|--------------------------------------------------------------------------
+| Web Routes (Main Entrypoint)
+|--------------------------------------------------------------------------
+|
+| File utama penampung rute. Memuat rute spesifik berdasarkan modul
+| untuk meminimalkan potensi merge conflict antar branch fitur.
+|
+*/
+
+// Halaman Splash Screen Utama
 Route::get('/', [SplashController::class, 'index'])->name('splash');
 
-// Public pages (placeholder — akan diisi di feature/public-pages)
-Route::get('/beranda', function () {
-    return redirect('/'); // temp
-})->name('home');
-
-// Dashboard (admin area — akan diisi di feature/admin-panel)
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
+// Modul Rute Otentikasi (Breeze)
 require __DIR__.'/auth.php';
+
+// Modul Rute Halaman Publik (Company Profile)
+require __DIR__.'/public.php';
+
+// Modul Rute Admin Panel & CRUD
+require __DIR__.'/admin.php';
