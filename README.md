@@ -1,58 +1,88 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🧵 Unknown Tailor & Bespoke — Web Company Profile
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi web profil usaha jahit dan busana kustom (*bespoke tailor*) berbasis **Laravel 11**, **TailwindCSS**, dan **Laravel Breeze**. Repositori ini dikembangkan sebagai pemenuhan tugas praktikum mata kuliah **Konstruksi dan Evolusi Perangkat Lunak**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🌟 Fitur Utama Aplikasi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. **Interactive Splash & Landing Screen**:
+   - Fase animasi pembuka dinamis menggunakan CSS murni (GPU-accelerated).
+   - Pemilihan jalur masuk: Pengunjung umum atau Administrator.
+2. **Multi-Page Public Company Profile**:
+   - **Beranda (`/p`)**: Informasi studio, statistik kepuasan, dan pilar keunggulan jahitan.
+   - **Tentang Kami (`/p/about`)**: Sejarah dedikasi seni pola klasik dan visi-misi studio.
+   - **Layanan & Estimasi (`/p/services`)**: Katalog jasa (Bespoke, Permak, Jas, Seragam) berserta alur 4 tahap pemesanan.
+   - **Galeri Portofolio Interaktif (`/p/gallery`)**:
+     - *Hover-to-reveal*: Arahkan kursor untuk melihat spesifikasi bahan dan potongan busana.
+     - *Click-to-lock*: Mengunci kartu informasi agar tetap terbaca tanpa khawatir kursor bergeser.
+     - *Single-lock active*: Mengklik area lain otomatis memulihkan tampilan ke kondisi awal tanpa penumpukan animasi.
+   - **Kontak & Janji Temu (`/p/contact`)**: Alamat fisik studio di Sleman, tautan WhatsApp, dan simulasi formulir janji fitting.
+3. **Arsitektur Rute Modular**:
+   - Pemisahan rute menjadi `routes/public.php` dan `routes/admin.php` untuk meminimalkan potensi konflik merge antar branch kerja.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🛠️ Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Backend**: PHP 8.3+, Laravel 11.x
+- **Frontend / Styling**: TailwindCSS, Alpine.js, Blade Component Architecture
+- **Auth**: Laravel Breeze
+- **Database**: MySQL (Laragon Local Environment)
+- **Tooling**: Composer, PNPM, Vite, GitHub CLI (`gh`)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 🚀 Panduan Menjalankan Proyek Secara Lokal
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 1. Kloning Repositori
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/Avin1731/evolusi-pl-24-542159-SV-25009.git
+cd evolusi-pl-24-542159-SV-25009
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Instalasi Dependensi PHP & Node
+```bash
+composer install
+pnpm install
+```
 
-## Contributing
+### 3. Konfigurasi Lingkungan (.env)
+Salin file konfigurasi lingkungan dan sesuaikan kredensial basis data Anda:
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Pastikan konfigurasi database di `.env`:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=evolusi_pl
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+### 4. Migrasi Database & Storage Link
+```bash
+php artisan migrate
+php artisan storage:link
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 5. Kompilasi Aset & Jalankan Server
+Jalankan compiler Vite dan development server Laravel:
+```bash
+pnpm run build
+php artisan serve
+```
+Buka browser di `http://localhost:8000` atau `http://evolusi-pl-24-542159-sv-25009.test`.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🌿 Struktur Percabangan (Branching Model)
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- `main` ➔ Branch rilis stabil (dilindungi Branch Protection).
+- `dev` ➔ Branch utama integrasi pengembangan fitur.
+- `feature/*` ➔ Branch pengerjaan fitur individual yang digabungkan ke `dev` melalui mekanisme Pull Request resmi.
+- `refactor/*` ➔ Branch penyelarasan desain dan penyempurnaan kode.
