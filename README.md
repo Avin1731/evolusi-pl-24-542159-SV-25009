@@ -23,6 +23,22 @@ Aplikasi web profil usaha jahit dan busana kustom (*bespoke tailor*) berbasis **
 
 ---
 
+## 📌 Status Fitur & Roadmap Rilis
+
+### ✅ Versi 1.0 (Rilis Saat Ini)
+- [x] Layar Pembuka Interaktif (Interactive Splash Screen & Animasi CSS)
+- [x] Halaman Profil Perusahaan Multi-page (Beranda, Tentang Kami, Layanan, Kontak)
+- [x] Galeri Portofolio Dinamis (Interaksi Hover & Kunci Detail Foto Single-Lock)
+- [x] Arsitektur Rute Modular (`public.php` & `admin.php`)
+- [x] Otomasi Alur Kerja Git & GitHub Actions CI/CD (Linting & Testing Otomatis)
+
+### 🔜 Rencana Versi Mendatang (v2.0)
+- [ ] Integrasi Login Admin via Google OAuth (Socialite)
+- [ ] Panel Dashboard Manajemen Konten (Admin CRUD)
+- [ ] Unggah Media Gambar Dinamis ke Penyimpanan Cloud/Storage
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Backend**: PHP 8.3+, Laravel 11.x
