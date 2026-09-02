@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -8,17 +9,13 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Rute-rute untuk halaman publik (Company Profile Pengunjung).
-| Dikelola dalam feature/public-pages.
 |
 */
 
-// Beranda / Home pengunjung (sementara placeholder redirect ke splash)
-Route::get('/beranda', function () {
-    return redirect()->route('splash');
-})->name('home');
-
-// Halaman-halaman publik berikutnya akan ditambahkan di sini:
-// Route::get('/about', ...)->name('about');
-// Route::get('/services', ...)->name('services');
-// Route::get('/gallery', ...)->name('gallery');
-// Route::get('/contact', ...)->name('contact');
+Route::prefix('p')->group(function () {
+    Route::get('/', [PublicController::class, 'index'])->name('home');
+    Route::get('/about', [PublicController::class, 'about'])->name('about');
+    Route::get('/services', [PublicController::class, 'services'])->name('services');
+    Route::get('/gallery', [PublicController::class, 'gallery'])->name('gallery');
+    Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
+});
