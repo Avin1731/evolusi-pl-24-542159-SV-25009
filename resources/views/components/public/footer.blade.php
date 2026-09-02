@@ -47,7 +47,7 @@
         </div>
 
         <div class="pt-8 border-t border-blue-900/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-400/60">
-            <p>&copy; {{ date('Y') }} Unknown Tailor & Bespoke. Hak Cipta Dilindungi.</p>
+            <p>&copy; {{ date('Y') }} Unknown — Jahit & Busana Kustom. Hak Cipta Dilindungi.</p>
             <p>Dibangun untuk Praktikum Konstruksi & Evolusi Perangkat Lunak</p>
         </div>
     </div>
