@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'Beranda' }} — Unknown Tailor & Bespoke</title>
+    <title>{{ $title ?? 'Jahit & Busana Kustom' }} — Unknown</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">

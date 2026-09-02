@@ -57,8 +57,8 @@
                              class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-blue-950/90 via-transparent to-transparent flex items-end p-6">
                             <div class="text-white">
-                                <span class="text-xs uppercase tracking-widest text-blue-300 font-semibold">Bespoke Collection</span>
-                                <h3 class="text-lg font-bold">Kualitas Jahitan Tanpa Kompromi</h3>
+                                <span class="text-xs uppercase tracking-widest text-blue-300 font-semibold">Unknown</span>
+                                <h3 class="text-lg font-bold">Jahit & Busana Kustom</h3>
                             </div>
                         </div>
                     </div>
